@@ -762,22 +762,23 @@ Testing set has 95 samples.
 <li>Naive Bayes: Naive Bayes algorithm is simple, fast, efficient and works great with small training sets (high-bias expected). However it is usually outperformed by other algorithms. NB assumes independent features but in this case they are not because for example sex_M and sex_F are clearly dependent.
 Even if this assumption is not true, NB still performs well in practice.
 Because of our training set isn't too large (300 samples) it seems reasonable to try a simple and efficient algorithm first (Occam's razor).
-NB is widely used in spam detection problems.
-++: Simple, fast, works well with small datasets, good as first approximation.
---: It is easily outperformed by other algorithms</li>
+NB is widely used in spam detection problems.</li>
 </ol>
+<p>++: Simple, fast, works well with small datasets, good as first approximation.</p>
+<p>--: It is easily outperformed by other algorithms</p>
 <ol>
 <li>Random Forest: Decision Tree Algorithm is also a good choice because our dataset isn't very large so that huge trees can be avoided. Instead of using a Decision Tree algorithm I prefer to try a Random Forest model in this case. 
-Theoretically, Random Forest classifiers have the advantages of Decision Trees (easy to interpret and explain, non-parametric, robust to outliers) but also are more scalable and faster in general. Besides RF are harder to overfit and easier to tune.
-Random forest Model is usually used for categorization of text documents.
-++: Non-parametric, doesn't care about data (outliers, linearly separable), scalable, faster than DT
---: Complexity, it is necessary to be careful with dimensionality</li>
+Theoretically, Random Forest classifiers have the advantages of Decision Trees (easy to interpret and explain, non-parametric, robust to outliers) but also are more scalable. Besides RF are harder to overfit and easier to tune.
+Random forest Model is usually used for categorization of text documents.</li>
 </ol>
+<p>++: Non-parametric, doesn't care about data (outliers, linearly separable), scalable, (<strong>review: RF is not a priori faster than Decision Trees. Anyway DT model is not chosen here so it's not possible to compare both algorithms in this particular case.</strong>)</p>
+<p>--: Complexity, it is necessary to be careful with dimensionality</p>
 <ol>
-<li>Gradient Boosting Classifier: Boosting methods iterate N times over the training set to make better predictions based on these N estimations. In theory "boosting is better" because the model can learn "more" from the data. Higher resources consumption is expected in terms of computation. Recently, gradient boosting has gained some popularity in the field of learning to rank. Commercial web search engines such as Yahoo and Yandex use variants of gradient boosting in their machine-learned ranking engines.
-++: Good performance, used in real apps.
---: Complexity, training this model is more expensive </li>
+<li>Gradient Boosting Classifier: Boosting methods iterate N times over the training set to make better predictions based on these N estimations. In theory "boosting is better" because the model can learn "more" from the data. Higher resources consumption is expected in terms of computation. Recently, gradient boosting has gained some popularity in the field of learning to rank. Commercial web search engines such as Yahoo and Yandex use variants of gradient boosting in their machine-learned ranking engines.</li>
 </ol>
+<p>++: Good performance, used in real apps.</p>
+<p>--: Complexity, training this model is more expensive</p>
+<p>(<strong>review: GBC is chosen for similar reasons than RF was. The dataset given is small and it doesn't have a large number of features so a good performance it's expected choosing this model. In addition, some of the features are just "dummy features" with 2 possible values so in these situations ensemble methods work great.</strong>)</p>
 
 </div>
 </div>
